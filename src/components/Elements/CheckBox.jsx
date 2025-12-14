@@ -1,17 +1,22 @@
 import react from 'react'
 
-function CheckBox() {
-    return(
+function CheckBox(props) {
+  const {label, id, ...rest} = props
+    return ( 
         <>
+
         <input
-        type="checkbox"
-        id="status"
-        name="status"
         className="text-sm accent-primary"
-      />
-      <label htmlFor="status" className="text-sm text-gray-600 ml-2">
-        Keep me signed in
-      </label>
+        id= {id}
+        {...rest}
+       />
+        <label 
+         htmlFor={id} 
+         className="text-sm text-gray-01 ml-6">
+        
+          {label}
+
+         </label>
       </>
     )   
 }
