@@ -7,11 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#2CA58D",
-        "special-mainBg": "#F9FAFB",
-      },
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        primary: "#22c55e",
+        "special-mainBg": "#f9fafb",
+        "gray-05": "#f3f4f6",
+        "gray-02": "#6b7280",
       },
     },
   },
