@@ -3,11 +3,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Exercise from "./Exercise.jsx";
+import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Exercise />
+    <App />
   </React.StrictMode>
 );
 
