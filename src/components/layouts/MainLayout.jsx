@@ -1,6 +1,8 @@
 import React from "react";
 import Logo from "../Elements/Logo";
 import Input from "../Elements/Input";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import Icon from "../Elements/Icon";
 
 function MainLayout({ children }) {
   return (
@@ -25,19 +27,23 @@ function MainLayout({ children }) {
           </nav>
         </div>
 
+        {/* LOGOUT */}
         <div className="flex items-center bg-special-bg3 text-white px-4 py-3 rounded-md cursor-pointer">
           <div className="mx-auto sm:mx-0">L</div>
           <div className="ms-3 hidden sm:block">Logout</div>
         </div>
 
+        {/* USER */}
         <div>
           <div className="border my-10 border-special-bg"></div>
           <div className="flex justify-between items-center text-sm">
             <div>Avatar</div>
+
             <div className="hidden sm:block">
               <div>Username</div>
               <div className="text-special-bg2">View Profile</div>
             </div>
+
             <div className="hidden sm:block">icon</div>
           </div>
         </div>
@@ -52,7 +58,7 @@ function MainLayout({ children }) {
           </div>
 
           <div className="flex items-center gap-6">
-            <div>icon</div>
+            <NotificationsIcon className="text-gray-01 scale-110" />
             <Input backgroundColor="bg-white" border="border-white" />
           </div>
         </header>
