@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import SignInPage from "./pages/signin";
 import SignUpPage from "./pages/signup";
 import ErrorPage from "./pages/error";
+import Dashboardpage from "./pages/dashboard";
 
 function HomePage() {
   return (
@@ -28,7 +29,7 @@ function HomePage() {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Dashboardpage />,
     errorElement: <ErrorPage />,
   },
   {
