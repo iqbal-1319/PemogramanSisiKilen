@@ -1,15 +1,17 @@
-import React from "react"; 
+import React from "react";
 
 function Card(props) {
-  const { title, link = false, desc } = props;
+  const { title, desc, link = false } = props;
 
   return (
-    <div className="h-full flex flex-col">
+    // Tambahkan class 'h-full'
+    <div className="flex flex-col h-full"> 
       <div className="flex justify-between items-center text-gray-02 mb-2">
-        <div className="text-2xl">{title}</div> 
+        <div className="text-2xl">{title}</div>
         {link && <div className="text-xs">View All</div>}
       </div>
-      <div className="flex-1  bg-white rounded-lg px-6 py-5 shadow-xl">
+      {/* Tambahkan class 'flex-1' agar background putih memanjang ke bawah */}
+      <div className="bg-white rounded-lg px-6 py-5 shadow-xl flex-1">
         {desc}
       </div>
     </div>
