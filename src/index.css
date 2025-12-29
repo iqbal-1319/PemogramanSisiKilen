@@ -1,3 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind v4 - HANYA INI YANG DIPERLUKAN */
+@import "tailwindcss";
+
+/* Variabel global - TETAP BISA PAKAI */
+:root {
+  --color-primary: #299D91;
+  --color-defaultBlack: #191919;
+  --color-special-mainBg: #F4F5F7;
+  --color-special-bg2: #878787;
+  --color-special-bg3: #202020;
+  --color-gray-01: #666666;
+  --color-gray-03: #9F9F9F;
+  --color-gray-05: #E8E8E8;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+/* Reset dasar - TETAP BISA */
+body {
+  font-family: var(--font-poppins);
+  background-color: var(--color-special-mainBg);
+}
+
+/* Custom styles tambahan bisa di sini */
