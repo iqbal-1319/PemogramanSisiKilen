@@ -1,4 +1,3 @@
-
 import Icon from "./components/Elements/Icon";
 
 export const bills = [
@@ -268,4 +267,3 @@ export const goals = {
   month: 5,
   year: 2023,
 };
-
