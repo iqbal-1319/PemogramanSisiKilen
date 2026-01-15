@@ -1,6 +1,6 @@
 import React from "react";
 import AuthLayout from "../components/Layouts/AuthLayout";
-import FormSignIn from "../components/Fragments/FormSignIn";
+import FormSignIn from "../components/Fragments/FormSignin"; // Ubah 'SignIn' jadi 'Signin' (i kecil)
 
 const SignInPage = () => {
   return (

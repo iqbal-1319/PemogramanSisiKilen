@@ -4,7 +4,7 @@ import DotsMobileStepper from "../Elements/DotsMobileStepper";
 import { Link } from "react-router-dom";
 import Icon from "../Elements/Icon";
 // Import ThemeContext untuk mengambil hex color
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 function CardBalance(props) {
   const { data } = props;

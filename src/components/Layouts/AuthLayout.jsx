@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import LogoDashboard from "../Elements/LogoDashboard";
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 // src/components/Layouts/AuthLayout.jsx
 

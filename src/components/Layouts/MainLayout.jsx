@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import LogoDashboard from "../Elements/LogoDashboard";
 import Icon from "../Elements/Icon";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 import { AuthContext } from "../../context/authContext";
 import { Backdrop, CircularProgress } from "@mui/material";
 

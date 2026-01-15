@@ -7,7 +7,7 @@ import Alert from "@mui/material/Alert";
 import Button from "../Elements/Button";
 import CheckBox from "../Elements/CheckBox";
 import LabeledInput from "../Elements/LabeledInput";
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 import { loginService } from "../../services/authService";
 import { AuthContext } from "../../context/authContext";
 

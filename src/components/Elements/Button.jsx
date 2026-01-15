@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const Button = (props) => {
   const { children, className, style, type } = props;

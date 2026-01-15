@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 // Import ThemeContext untuk mengambil kode warna hex secara langsung
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const LogoDashboard = (props) => {
   const { variant = "primary" } = props;

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 // Import ThemeContext untuk mengambil warna tema global [cite: 1735]
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const BarsDataset = (props) => {
   const { dataset } = props;

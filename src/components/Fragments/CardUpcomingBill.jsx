@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Card from "../Elements/Card";
 // 1. Import ThemeContext agar bisa mengambil hex color langsung
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const CardUpcomingBill = (props) => {
   const { data } = props;

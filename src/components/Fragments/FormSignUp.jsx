@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Button from "../Elements/Button";
 import LabeledInput from "../Elements/LabeledInput";
 import { Link } from "react-router-dom";
-import { ThemeContext } from "../../context/themeContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
