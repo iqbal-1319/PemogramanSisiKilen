@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import MainLayout from "../components/Layouts/MainLayout";
-import { AuthContext } from "../context/authContext";
+import { AuthContext } from "../Context/AuthContext";
 
 // Data
 import {

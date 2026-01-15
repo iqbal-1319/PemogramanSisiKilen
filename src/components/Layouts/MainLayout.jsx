@@ -4,7 +4,7 @@ import LogoDashboard from "../Elements/LogoDashboard";
 import Icon from "../Elements/Icon";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { ThemeContext } from "../../Context/ThemeContext";
-import { AuthContext } from "../../context/authContext";
+import { AuthContext } from "../../Context/AuthContext";
 import { Backdrop, CircularProgress } from "@mui/material";
 
 const MainLayout = ({ children }) => {
