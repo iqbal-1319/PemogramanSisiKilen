@@ -1,6 +1,6 @@
 import React from "react";
-import AuthLayout from "../components/layouts/AuthLayout"; // Ubah 'Layouts' jadi 'layouts'
-import FormSignIn from "../components/fragments/FormSignIn";
+import AuthLayout from "../components/Layouts/AuthLayout";
+import FormSignIn from "../components/Fragments/FormSignIn";
 
 const SignInPage = () => {
   return (
