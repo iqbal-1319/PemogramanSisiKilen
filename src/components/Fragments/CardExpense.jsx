@@ -1,86 +1,56 @@
-import React from "react";
 import Icon from "../Elements/Icon";
 
-const CardExpense = ({ data }) => {
+const CardExpense = ({ category, amount, percentage, trend, items = [] }) => {
 
-  const getIcon = (category) => {
-    switch (category) {
-      case "Housing":
-        return <Icon.House />; 
-      case "Food":
-        return <Icon.Food />;
-      case "Transportation":
-        return <Icon.Transport />; 
-      case "Entertainment":
-        return <Icon.Movie />;
-      case "Shopping":
-        return <Icon.Shopping />;
-      default:
-        return <Icon.Other />;
-    }
+  const getIconComponent = (category) => {
+    const iconMap = {
+      housing: Icon.House,
+      food: Icon.Food,
+      transportation: Icon.Transport,
+      entertainment: Icon.Movie,
+      shopping: Icon.Shopping,
+      others: Icon.Other,
+    };
+    return iconMap[category?.toLowerCase()] || Icon.Other;
   };
 
-  const isIncrease = data.status === "up"; 
-  const colorClass = isIncrease ? "text-red-500" : "text-green-500";
-  const rotateClass = isIncrease ? "rotate-180" : "";
+  const IconComponent = getIconComponent(category);
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-full flex flex-col justify-between">
-      {/* HEADER CARD */}
-      <div className="flex justify-between items-start mb-6">
-        <div className="flex gap-4 items-center">
-          {/* Container Icon dengan background abu-abu */}
-          <div className="bg-gray-50 p-3 rounded-xl flex items-center justify-center text-gray-600">
-             {/* Render Icon yang sudah dipastikan ada */}
-             {getIcon(data.category)}
+    <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+      <div className="flex items-center justify-between bg-gray-50 p-6 border-b border-gray-200">
+        <div className="flex items-center gap-3">
+          <div className="p-3 rounded-lg bg-gray-200">
+            <IconComponent size={32} className="text-gray-700" />
           </div>
           <div>
-            <p className="text-gray-400 text-sm font-medium mb-1">{data.category}</p>
-            <h4 className="text-xl font-bold text-gray-800">${data.total}</h4>
+            <div className="text-gray-500 text-base font-medium">{category ? category.charAt(0).toUpperCase() + category.slice(1) : "Expense"}</div>
+            <div className="text-3xl font-bold text-gray-900">${amount}</div>
           </div>
         </div>
-
-        {/* Percentage Info */}
-        <div className="text-right">
-          <div className="flex items-center justify-end gap-1 mb-1">
-             <span className={`text-sm font-bold ${colorClass}`}>
-               {data.percentage}%
-             </span>
-             {/* Panah Indikator */}
-             <svg 
-                className={`w-4 h-4 ${colorClass} ${rotateClass}`} 
-                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-             >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 14l-7 7-7-7" />
-             </svg>
+        <div className="flex flex-col items-end">
+          <div className={`flex items-center gap-1 text-base font-semibold ${trend === "up" ? "text-red-500" : "text-green-500"}`}>
+            {percentage}% {trend === "up" ? <Icon.ArrowUp size={20} /> : <Icon.ArrowDown size={20} />}
           </div>
-          <p className="text-[10px] text-gray-400">Compare to last month</p>
+          <div className="text-xs text-gray-400 mt-1">Compare to the last month</div>
         </div>
       </div>
 
-      {/* LIST ITEM DETAILS */}
-      <div className="space-y-4">
-        {data.breakdown.map((item, index) => (
-          <div key={index}>
-             {/* Baris Item */}
-            <div className="flex justify-between items-end mb-1">
-                <span className="text-sm font-medium text-gray-600">{item.name}</span>
-                <span className="text-sm font-bold text-gray-800">${item.amount}</span>
+      <div className="px-6">
+        <div className="flex flex-col divide-y divide-gray-200 pb-2">
+          {items.map((detail, index) => (
+            <div key={index} className="flex justify-between py-4 items-center">
+              <div className="text-gray-600 text-base font-medium">{detail.item}</div>
+              <div className="text-right">
+                <div className="font-semibold text-gray-900 text-lg">${detail.amount}</div>
+                <div className="text-sm text-gray-400">{detail.date}</div>
+              </div>
             </div>
-            {/* Baris Tanggal */}
-            <div className="flex justify-between items-start">
-                <span className="text-xs text-gray-400">{item.date}</span>
-                <span className="text-xs text-gray-400">{item.date}</span>
-            </div>
-             {/* Garis Pemisah (kecuali item terakhir) */}
-            {index !== data.breakdown.length - 1 && (
-                <hr className="border-dashed border-gray-100 mt-3" />
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default CardExpense;

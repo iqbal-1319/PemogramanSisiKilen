@@ -22,9 +22,13 @@ import CardStatistic from "../components/Fragments/CardStatistic";
 import CardExpenseBreakdown from "../components/Fragments/CardExpenseBreakdown";
 
 const DashboardPage = () => {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, loading } = useContext(AuthContext);
 
   // 🔐 PROTEKSI HALAMAN (POIN E)
+  if (loading) {
+    return null; // Atau komponen loading spinner
+  }
+
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
